@@ -1,4 +1,4 @@
-@smoke @Regression
+@smoke @Regression @Login
 Feature: Library app login feature
   User Story: hello
   Background: For the scenario in the future file, user is expected to be on login page
@@ -11,7 +11,7 @@ Feature: Library app login feature
     And user enters librarian password
     Then user should see dashboard
 
-    @student
+    @student @db
   Scenario: Login as a student
     Given user is on the library login page
     When user enters student username
