@@ -3,6 +3,7 @@ package my_utils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
@@ -17,10 +18,13 @@ public class Driver {
     public static WebDriver getDriver(){
         if(driver==null){
             String browserType = ConfigReader.getProperty("browser");
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--incognito");
+            options.addArguments("lang=en-GB");
             switch(browserType){
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    driver = new ChromeDriver(options);
                     driver.manage().window().maximize();
                     // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;

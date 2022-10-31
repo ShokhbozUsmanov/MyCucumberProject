@@ -17,9 +17,9 @@ public class WikiFunctionality {
     }
 
     @When("user types {string} in the wiki search box")
-    public void userTypesSteveJobsInTheWikiSearchBox(String searchKeyword) {
+    public void userTypesSteveJobsInTheWikiSearchBox(String searchValue) {
         WebElement search = Driver.getDriver().findElement(By.xpath("//input[@id='searchInput']"));
-        search.sendKeys(searchKeyword, Keys.ENTER);
+        search.sendKeys(searchValue, Keys.ENTER);
     }
 
     @And("user click wiki search button")
@@ -28,7 +28,7 @@ public class WikiFunctionality {
     }
 
     @Then("user sees {string} is in the wiki title")
-    public void userSeesSteveJobsIsInTheWikiTitle(String string) {
-        Assert.assertTrue(Driver.getDriver().getTitle().contains("Джобс, Стив"));
+    public void userSeesSteveJobsIsInTheWikiTitle(String expectedTitle) {
+        Assert.assertTrue(Driver.getDriver().getTitle().contains(expectedTitle));
     }
 }

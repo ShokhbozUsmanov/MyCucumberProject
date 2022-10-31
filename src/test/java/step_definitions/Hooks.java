@@ -20,7 +20,7 @@ public class Hooks {
        byte [] screenshot = ((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
        scenario.attach(screenshot, "image/png", scenario.getName());
 
-        Driver.getDriver().quit();
+        //Driver.getDriver().quit();
     }
     @Before //(value = "@Login", order = 2)
     public void setupForLogin(){
