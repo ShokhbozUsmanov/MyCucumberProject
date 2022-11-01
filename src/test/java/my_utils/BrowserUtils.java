@@ -35,5 +35,14 @@ public class BrowserUtils {
         }
     return actualOptionsAsString;
     }
+    public static void clickRadioButton(List<WebElement> radioBUttons, String attributeValue){
+
+        for (WebElement each: radioBUttons) {
+            if(each.getAttribute("value").equalsIgnoreCase(attributeValue)){
+                each.click();
+            }
+        }
+
+    }
 
 }
