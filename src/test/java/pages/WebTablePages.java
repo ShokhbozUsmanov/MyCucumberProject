@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class WebTablePages {
     public WebTablePages() {
-        PageFactory.initElements(Driver.getDriver(), this);
+        PageFactory.initElements(Driver.getDriverpool(), this);
     }
 
     @FindBy(name = "username")
