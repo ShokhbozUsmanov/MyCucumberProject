@@ -14,7 +14,7 @@ public class GoogleSearch_StepDefinitions {
 
     @Given ("user is on Google search page")
     public void user_is_on_google_search_page(){
-        Driver.getDriverpool().get("https://www.google.com");
+        Driver.getDriver().get("https://www.google.com");
     }
 
 
@@ -27,7 +27,7 @@ public class GoogleSearch_StepDefinitions {
     @Then("user sees apple - Google Search is in the google title")
     public void userSeesAppleGoogleSearchIsInTheGoogleTitle() {
         String expectedTitle = "apple - Поиск в Google";
-        String actualTitle = Driver.getDriverpool().getTitle();
+        String actualTitle = Driver.getDriver().getTitle();
         Assert.assertEquals("Title verification is failed!",expectedTitle, actualTitle);
     }
 

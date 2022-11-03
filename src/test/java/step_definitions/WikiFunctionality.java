@@ -11,14 +11,15 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class WikiFunctionality {
+
     @Given ("user is on the Wikipedia home page")
     public void user_is_on_the_Wikipedia_home_page(){
-        Driver.getDriverpool().get("https://www.wikipedia.org/");
+        Driver.getDriver().get("https://www.wikipedia.org/");
     }
 
     @When("user types {string} in the wiki search box")
     public void userTypesSteveJobsInTheWikiSearchBox(String searchValue) {
-        WebElement search = Driver.getDriverpool().findElement(By.xpath("//input[@id='searchInput']"));
+        WebElement search = Driver.getDriver().findElement(By.xpath("//input[@id='searchInput']"));
         search.sendKeys(searchValue, Keys.ENTER);
     }
 
@@ -29,6 +30,6 @@ public class WikiFunctionality {
 
     @Then("user sees {string} is in the wiki title")
     public void userSeesSteveJobsIsInTheWikiTitle(String expectedTitle) {
-        Assert.assertTrue(Driver.getDriverpool().getTitle().contains(expectedTitle));
+        Assert.assertTrue(Driver.getDriver().getTitle().contains(expectedTitle));
     }
 }

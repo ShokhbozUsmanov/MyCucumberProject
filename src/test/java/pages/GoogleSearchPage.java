@@ -9,7 +9,7 @@ public class GoogleSearchPage {
 
     public GoogleSearchPage() {
 
-        PageFactory.initElements(Driver.getDriverpool(), this);
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(name = "q")

@@ -12,7 +12,7 @@ public class WebTableStepDef {
     WebTablePages webTable = new WebTablePages();
     @Given("user is on the login page of web table app")
     public void userIsOnTheLoginPageOfWebTableApp() {
-        Driver.getDriverpool().get("https://web-table-2.cydeo.com/login");
+        Driver.getDriver().get("https://web-table-2.cydeo.com/login");
     }
 
     @When("user enters username {string}")
@@ -32,6 +32,6 @@ public class WebTableStepDef {
 
     @Then("user should see url contains orders")
     public void userShouldSeeUrlContainsOrders() {
-        Assert.assertTrue(Driver.getDriverpool().getCurrentUrl().contains("orders"));
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("orders"));
     }
 }
